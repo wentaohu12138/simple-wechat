@@ -1,0 +1,10 @@
+.logo-container {
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	height: 150px;
+}
+
+.logo-container>img {
+	height: 100%;
+}

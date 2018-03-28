@@ -13,10 +13,10 @@ class Register extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			userName: '',
-			userPassword: '',
-			userRePass: '',
-			userType: '0' //0表示求職，1表示招聘
+			user: '',
+			pwd: '',
+			repeatpwd: '',
+			type: '0' //0表示求職，1表示招聘
 		}
 
 		this._inputNameHandle = this._inputNameHandle.bind(this)
@@ -25,27 +25,28 @@ class Register extends Component {
 		this._changeTypeF = this._changeTypeF.bind(this)
 		this._changeTypeS = this._changeTypeS.bind(this)
 		this._registerHandle = this._registerHandle.bind(this)
+		console.log(this.props)
 	}
 
 	_inputNameHandle(value) {
 		console.log(value)
-		this.setState({userName: value});
+		this.setState({user: value});
 	}
 
 	_inputPassHandle(value) {
-		this.setState({userPassword: value})
+		this.setState({pwd: value})
 	}
 
 	_inputRePassHandle(value) {
-		this.setState({userRePass: value})
+		this.setState({repeatpwd: value})
 	}
 
 	_changeTypeS() {
-		this.setState({userType: '1'})
+		this.setState({type: '1'})
 	}
 
 	_changeTypeF() {
-		this.setState({userType: '0'})
+		this.setState({type: '0'})
 	}
 
 	_registerHandle(e) {
@@ -59,14 +60,15 @@ class Register extends Component {
 			<h2>注冊頁</h2>
 			<WingBlank>
 				<List>
-					<InputItem value={this.state.userName} onChange={this._inputNameHandle}>用戶名</InputItem>
+					<p>{this.props.msg}</p>
+					<InputItem value={this.state.user} onChange={this._inputNameHandle}>用戶名</InputItem>
 					<WhiteSpace/>
-					<InputItem type='password' value={this.state.userPassword} onChange={this._inputPassHandle}>密碼</InputItem>
+					<InputItem type='password' value={this.state.pwd} onChange={this._inputPassHandle}>密碼</InputItem>
 					<WhiteSpace/>
-					<InputItem type='password' value={this.state.userRePass} onChange={this._inputRePassHandle}>重複密碼</InputItem>
+					<InputItem type='password' value={this.state.repeatpwd} onChange={this._inputRePassHandle}>重複密碼</InputItem>
 					<WhiteSpace/>
-					<RadioItem checked={this.state.userType=='0'} onChange={this._changeTypeF}>求職</RadioItem>
-					<RadioItem checked={this.state.userType=='1'} onChange={this._changeTypeS}>招聘</RadioItem>
+					<RadioItem checked={this.state.type=='0'} onChange={this._changeTypeF}>求職</RadioItem>
+					<RadioItem checked={this.state.type=='1'} onChange={this._changeTypeS}>招聘</RadioItem>
 				</List>
 				<WhiteSpace/>
 				<Button  type='primary' onClick={this._registerHandle}>注冊</Button>

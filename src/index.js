@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom'
 
 import reducer from './reducer'
 import './config'
+import './index.css'
 
 import Authroute from './component/authroute/authroute'
 import Login from './container/login/login'

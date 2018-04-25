@@ -1,8 +1,6 @@
-import React,{Component} from 'react'
-// import axios from 'axios' 
-// import {Card, WhiteSpace, WingBlank} from 'antd-mobile'
-import {connect} from 'react-redux'
+import React, {Component} from 'react'
 import {getUserList} from '../../redux/chatuser.redux'
+import {connect} from 'react-redux'
 import UserCard from '../usercard/usercard'
 
 
@@ -10,13 +8,13 @@ import UserCard from '../usercard/usercard'
 	state=>state.chatuser,
 	{getUserList}
 )
-class Boss extends Component {
+class Genius extends Component {
 	constructor(props) {
 		super(props)
 	}
 
 	componentDidMount() {
-		this.props.getUserList('genius')
+		this.props.getUserList('boss')
 	}
 
 	render() {
@@ -26,4 +24,4 @@ class Boss extends Component {
 	}
 }
 
-export default Boss
+export default Genius

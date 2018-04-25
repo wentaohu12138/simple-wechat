@@ -4,19 +4,13 @@ import {NavBar} from 'antd-mobile'
 import {Switch, Route} from 'react-router-dom'
 import NavLinkBar from '../../component/navlink/navlink.js'
 import Boss from '../../component/boss/boss'
-
-
-function Genius() {
-	return <h3>牛人 首頁</h3>
-}
+import Genius from '../../component/genius/genius'
+import User from '../../component/user/user'
 
 function Msg() {
 	return <h3>消息列表</h3>
 }
 
-function User() {
-	return <h3>個人中心</h3>
-}
 
 @connect (
 	state=>state
@@ -38,15 +32,15 @@ class Dashboard extends Component {
 				icon: 'boss',
 				title: '牛人列表',
 				component: Boss,
-				hide:user.type=='1'
+				hide:user.type=='genius'
 			},
 			{
 				path: '/genius',
-				text: '牛人',
+				text: 'Boss',
 				icon: 'job',
 				title: 'BOSS列表',
 				component: Genius,
-				hide:user.type=='0'
+				hide:user.type=='boss'
 			},
 			{
 				path: '/msg',

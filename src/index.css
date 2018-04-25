@@ -23,3 +23,17 @@
 .am-card-header-content img{
 	width: 40%;
 }
+
+img{
+	width: 100%;
+}
+.am-tab-bar{
+	z-index: -1;
+}
+
+.stick-footer{
+	z-index:10;
+	position: absolute;
+	bottom: 0;
+	width:100%;
+}

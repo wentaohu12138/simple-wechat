@@ -5,11 +5,11 @@ import {withRouter} from 'react-router-dom'
 
 @withRouter
 class UserCard extends Component {
-	static PropTypes ={
+	static propTypes ={
 		userList: PropTypes.array.isRequired
 	}
 	handleClick(v) {
-		this.props.history.push(`/chat/${v.user}`)
+		this.props.history.push(`/chat/${v._id}`)
 	}
 	render() {
 		return (

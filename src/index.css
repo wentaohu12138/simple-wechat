@@ -33,9 +33,16 @@ img{
 
 .stick-footer{
 	z-index:10;
-	position: fixed;
 	bottom: 0;
 	width:100%;
+}
+
+#chat-page{
+	min-height: 100%；
+}
+
+#chat-page .chat-msg{
+	overflow: auto;
 }
 
 #chat-page .chat-me .am-list-extra{
@@ -50,4 +57,27 @@ img{
 }
 #chat-page .am-grid-text{
 	margin-top: 0;
+}
+
+#chat-page .am-grid-icon{
+	display: none;
+}
+
+#chat-page .am-grid-text{
+	margin-top:0;
+	font-size: 25px;
+}
+#chat-page .am-list-item img {
+	width: 59px;
+    height: auto;
+}
+
+#chat-page .am-list-item .am-list-line .am-list-content{
+	text-overflow: clip;
+    white-space: normal;
+}
+
+#chat-list .am-list-thumb img{
+	width: 59px;
+    height: auto;	
 }

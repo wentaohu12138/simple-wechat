@@ -24,10 +24,12 @@ class Chat extends React.Component {
 		// 	})
 		// })
 		
-		const toId = this.props.match.params.user
-		this.props.readMsg(toId)
 		this.fixCarousel()
 		document.body.scrollIntoView(false)
+	}
+	componentWillUnmount() {
+		const toId = this.props.match.params.user
+		this.props.readMsg(toId)
 	}
 	componentDidUpdate() {
 		console.log(document.body.innerHeight)
@@ -115,7 +117,7 @@ class Chat extends React.Component {
 									<span onClick={()=>this.handleSubmit()}>發送</span>									
 								</div>
 							}
-						>信息</InputItem>
+						></InputItem>
 					</List>
 					{
 						this.state.showEmoji?<Grid
